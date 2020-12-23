@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Link from 'next/linkt';","map":{"version":3,"sources":["E:/MyGit/github-demo/components/Layout.jsx"],"names":["Link"],"mappings":"AAAA,OAAOA,IAAP,MAAiB,YAAjB","sourcesContent":["import Link from 'next/linkt';\r\n"]},"metadata":{},"sourceType":"module"}

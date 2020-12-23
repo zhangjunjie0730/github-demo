@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Link from 'next/link';\nimport { Button } from 'antd';","map":{"version":3,"sources":["E:/MyGit/github-demo/components/Layout.jsx"],"names":["Link","Button"],"mappings":"AAAA,OAAOA,IAAP,MAAiB,WAAjB;AACA,SAASC,MAAT,QAAuB,MAAvB","sourcesContent":["import Link from 'next/link';\r\nimport { Button } from 'antd';\r\n"]},"metadata":{},"sourceType":"module"}
