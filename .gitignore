@@ -38,4 +38,4 @@ NOTEBOOK.md
 NOTEBOOK.assets
 
 # 不能暴露出去的config
-config.js
+/config.js
