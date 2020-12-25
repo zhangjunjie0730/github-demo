@@ -1,4 +1,3 @@
-import Router from 'koa-router';
 import { withRouter } from 'next/router';
 
 const Search = ({ router }) => {

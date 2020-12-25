@@ -8,10 +8,11 @@ const style = {
 };
 
 // 通过这种方式能减少一个div标签，将container的属性集成在子组件的div上！
-export default ({ children, renderer = <div /> }) => {
+const MyContaier = ({ children, renderer = <div /> }) => {
   const newElement = cloneElement(renderer, {
     style: Object.assign({}, renderer.props.style, style),
     children,
   });
   return newElement;
 };
+export default MyContaier;

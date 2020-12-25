@@ -4,7 +4,10 @@
 
 
 
+# Nextjs踩坑
 
+1. `getInitialProps` 返回的值一定只能是具体数据，例如 axios 请求过来返回 data.data。如果返回包含方法的对象，就会报错，属于循环引用错误
+2. 
 
 # Next.js
 
@@ -681,13 +684,51 @@ test();
     url:'https://github.com/login/oauth/authorize?client_id=887cd757babf66918d15&scope=user,repo'
     ```
 
-    
-
  2. github 端成功授权后跳转到原来的网站，并且携带 `code` 参数，网站客户端进行处理后要返回 `code + client_secret`  ，再发送给 github 网站后收到一个 token，就能获取到信息了。
+
+    ```js
+    注意：redirect跳转的网站是你再创建这个oAuth时候设定的那个
+    ```
 
  3. 把这个 `access_token` 存入到 `session` 中去
 
  4. 通过 `session` 发送 `cookie` 到客户端，就不需要多次请求了。
+
+
+
+## Oauth code的安全性保证
+
+1. 一次性的 code：服务端获取到的 code 是一次性的
+2. id + secret 验证获取方式：只要服务器安全（secret 保存在服务器中的）
+3. redirect 的网址在创建 oAuth 的时候写入了 github 的设置，如果请求时想发送到其他网站会报错
+
+
+
+## 集成 Oauth code
+
+**重点：要将token 发送到 cookie 中，但是 cookie 对外可见，不能保存敏感信息。**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

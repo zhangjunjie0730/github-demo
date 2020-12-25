@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { connect } from 'react-redux';","map":{"version":3,"sources":["E:/MyGit/github-demo/components/Layout/index.jsx"],"names":["connect"],"mappings":"AAAA,SAASA,OAAT,QAAwB,aAAxB","sourcesContent":["import { connect } from 'react-redux';\r\n"]},"metadata":{},"sourceType":"module"}
