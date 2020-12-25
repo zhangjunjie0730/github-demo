@@ -5,14 +5,19 @@ import { useSelector } from 'react-redux';
 import { MailOutlined } from '@ant-design/icons';
 import { request } from '../utils/api';
 import Repo from '../components/Repo';
+import initCache from '../utils/client-cache';
 
 const { publicRuntimeConfig } = getConfig();
-
-let cachedUserRepos, userStaredRepos;
+const { cache, useCache } = initCache();
 
 const Index = ({ userRepos, starred, router }) => {
   const user = useSelector(store => store.user);
   const tabKey = router.query.key || '1';
+
+  useCache('cache', {
+    userRepos,
+    starred,
+  });
 
   // 未登录时
   if (!user || !user.id) {
@@ -119,7 +124,7 @@ const Index = ({ userRepos, starred, router }) => {
   );
 };
 
-Index.getInitialProps = async ({ ctx, reduxStore }) => {
+Index.getInitialProps = cache(async ({ ctx, reduxStore }) => {
   const { user } = reduxStore.getState();
   if (!user || !user.id) {
     return {};
@@ -143,6 +148,6 @@ Index.getInitialProps = async ({ ctx, reduxStore }) => {
     userRepos,
     starred,
   };
-};
+});
 
 export default withRouter(Index);

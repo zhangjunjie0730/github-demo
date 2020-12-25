@@ -1,5 +1,4 @@
-const config = require('./config');
-const { OAUTH_URL } = config;
+const { OAUTH_URL } = require('./config');
 
 module.exports = {
   distDir: 'dest',
