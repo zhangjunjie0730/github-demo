@@ -34,8 +34,8 @@ yarn-error.log*
 .vercel
 
 # # myNotebook
-NOTEBOOK.md
-NOTEBOOK.assets
+/NOTEBOOK.md
+/NOTEBOOK.assets
 
 # 不能暴露出去的config
 /config.js

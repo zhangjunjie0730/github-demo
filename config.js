@@ -11,7 +11,7 @@ const github = {
   client_secret: '06f3566a26818a93176ca0a13ec48d8addf3341d',
 };
 
-const LANGUAGES = ['JavaScript', 'HTML', 'CSS', 'TypeScript', 'Java', 'Vue', 'React'];
+const LANGUAGES = ['JavaScript', 'HTML', 'CSS', 'TypeScript', 'Java', 'Vue', 'React', 'Node'];
 const SORT_TYPES = [
   {
     name: 'Best Match',
@@ -37,6 +37,7 @@ const SORT_TYPES = [
     order: 'asc',
   },
 ];
+const PER_PAGE = 20;
 
 module.exports = {
   github,
@@ -44,4 +45,5 @@ module.exports = {
   OAUTH_URL: `${GITHUB_OAUTH_URL}?client_id=${github.client_id}&scope=${SCOPE}`,
   LANGUAGES,
   SORT_TYPES,
+  PER_PAGE,
 };

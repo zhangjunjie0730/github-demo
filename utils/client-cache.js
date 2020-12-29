@@ -18,16 +18,13 @@ export default function initClientCache({ lruConfig = {}, genCacheKeyStrate } = 
 
   function cache(fn) {
     // 服务端不能保留缓存 会在多个用户之间共享
-    if (isServer) {
-      return fn;
-    }
+    if (isServer) return fn;
 
     return async (...args) => {
       const key = getCacheKey(...args);
       const cached = lruCache.get(key);
-      if (cached) {
-        return cached;
-      }
+      if (cached) return cached;
+
       const result = await fn(...args);
       lruCache.set(key, result);
       return result;
@@ -41,9 +38,7 @@ export default function initClientCache({ lruConfig = {}, genCacheKeyStrate } = 
   // 允许客户端外部手动设置缓存数据
   function useCache(key, cachedData) {
     useEffect(() => {
-      if (!isServer) {
-        setCache(key, cachedData);
-      }
+      if (!isServer) setCache(key, cachedData);
     }, []);
   }
 
