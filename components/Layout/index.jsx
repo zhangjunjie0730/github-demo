@@ -22,7 +22,16 @@ const AppLayout = ({ children }) => {
                 </a>
               </Link>
             </div>
-            <div style={{ color: '#fff' }}>Github Assistant </div>
+            <Link href="/">
+              <a>
+                <span
+                  style={{ color: '#fff', marginRight: '10px', fontSize: '20px', fontWeight: 800 }}
+                >
+                  Github Assistant
+                </span>
+              </a>
+            </Link>
+
             <div>
               <SearchInput />
             </div>
@@ -40,7 +49,7 @@ const AppLayout = ({ children }) => {
         <MyContainer>{children}</MyContainer>
       </Layout.Content>
       <Layout.Footer style={footer}>
-        Develop by ZJJ @
+        Developed by zhangjunjie @
         <a href="https://github.com/zhangjunjie0730" target="__blank">
           github
         </a>

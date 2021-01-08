@@ -3,11 +3,15 @@ import { withRouter } from 'next/router';
 import { UserOutlined } from '@ant-design/icons';
 
 const UserAvatar = ({ router, user, onLogout }) => {
+  const logoutClick = () => {
+    onLogout();
+    router.push('/');
+  };
   // 用户下拉菜单
   const UserDropdown = (
     <Menu>
       <Menu.Item>
-        <Button onClick={() => onLogout()} type="link">
+        <Button onClick={logoutClick} type="link">
           登出
         </Button>
       </Menu.Item>

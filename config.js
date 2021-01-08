@@ -1,14 +1,14 @@
 /**
  * github oath配置
  */
-
+const PORT = 5001;
 const GITHUB_OAUTH_URL = 'https://github.com/login/oauth/authorize';
 const SCOPE = 'user';
 
 const github = {
   request_token_url: 'https://github.com/login/oauth/access_token',
-  client_id: '887cd757babf66918d15',
-  client_secret: '06f3566a26818a93176ca0a13ec48d8addf3341d',
+  client_id: '5d7e64f0596df48fb999',
+  client_secret: '2e76df7c6619112a19b02ccfd32b966757686108',
 };
 
 const LANGUAGES = ['JavaScript', 'HTML', 'CSS', 'TypeScript', 'Java', 'Vue', 'React', 'Node'];
@@ -46,4 +46,5 @@ module.exports = {
   LANGUAGES,
   SORT_TYPES,
   PER_PAGE,
+  PORT,
 };

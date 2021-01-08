@@ -54,10 +54,12 @@ const Index = ({ userRepos, starred, router }) => {
         <span className="login">{login}</span>
         <span className="name">{name}</span>
         <span className="bio">{bio}</span>
-        <p className="email">
-          <MailOutlined />
-          <a href={`mailto:${email}`}>{email}</a>
-        </p>
+        {email && (
+          <p className="email">
+            <MailOutlined />
+            <a href={`mailto:${email}`}>{email}</a>
+          </p>
+        )}
       </div>
       <div className="user-repos">
         <Tabs activeKey={tabKey} onChange={handleTabChange} animated={false}>
